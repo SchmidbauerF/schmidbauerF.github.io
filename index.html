@@ -7,7 +7,6 @@
 <meta name="description" content="Gemütliche Souterrain Ferienwohnung in Iphofen – ideal für Pendler, Geschäftsreisende und Touristen. Komfortabel, ruhig gelegen und nur 40€ pro Nacht.">
 
 <style>
-/* Allgemein */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -80,7 +79,6 @@ header h1, header p {
   border-radius: 8px;
 }
 
-/* Preis Button */
 .button {
   display: inline-block;
   padding: 12px 20px;
@@ -95,7 +93,6 @@ header h1, header p {
   background: #1f3535;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -104,7 +101,6 @@ footer {
   font-size: 0.9em;
 }
 
-/* Listen für Ausstattung */
 ul {
   columns: 2;
 }
@@ -114,7 +110,6 @@ ul {
   }
 }
 
-/* Kontaktformular */
 input, textarea {
   width: 100%;
   padding: 10px;
@@ -135,8 +130,18 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #1f3535;
 }
+
+/* Google Map Container */
+.map-container {
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -207,17 +212,24 @@ input[type=submit]:hover {
     <li>Restaurants & Cafés mit fränkischer Küche</li>
     <li>Kulturelle Veranstaltungen & Wochenmärkte</li>
   </ul>
+  <h3>Standort:</h3>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Am+Schafhofgraben+4a,+97346+Iphofen,DE"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
 </div>
 
 <div id="gastgeber" class="tabcontent">
   <h2>Gastgeber</h2>
   <p>Gabriele & Meinhard Schmidbauer – herzliche, freundliche Gastgeber aus Leidenschaft. Mit viel Liebe zum Detail sorgen wir dafür, dass Sie sich willkommen fühlen.</p>
-  <p>Persönlicher Kontakt, Sauberkeit und ein angenehmes Ambiente sind uns besonders wichtig. Wir geben Tipps zur Umgebung, Restaurants und Sehenswürdigkeiten, damit Sie einen rundum schönen Aufenthalt genießen.</p>
+  <p>Persönlicher Kontakt, Sauberkeit und ein angenehmes Ambiente sind uns besonders wichtig. Wir geben Tipps zur Umgebung, Restaurants und Sehenswürdigkeiten, damit Sie einen rundum schönen Aufenthalt genießen. Wir lieben es, Gästen ein Stück fränkische Gastfreundschaft näherzubringen!</p>
 </div>
 
 <div id="galerie" class="tabcontent">
   <h2>Galerie</h2>
-  <p>Hier werden in Kürze Bilder der Ferienwohnung und der Umgebung angezeigt.</p>
+  <p>Hier werden in Kürze Bilder der Ferienwohnung und Umgebung angezeigt.</p>
 </div>
 
 <div id="kontakt" class="tabcontent">
@@ -238,8 +250,8 @@ input[type=submit]:hover {
 
 <div id="bewertungen" class="tabcontent">
   <h2>Bewertungen</h2>
-  <p>Hier können die Bewertungen von Booking.com eingebunden werden:</p>
-  <a href="https://www.booking.com/hotel/de/souterrain-ferienwohnung-iphofen-iphofen.de.html?aid=202008&label=mkt123sc-cacc9c71-7bc9-4727-9ab5-5ae02aada87f&sid=5b22d8819cdc383965ec1fc96eec5c03&dest_id=-1800892&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=9&hpos=9&nflt=ht_id%3D201&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=price_from_high_to_low&srepoch=1772570371&srpvid=24a191259ec001f2&type=total&ucfs=1" target="_blank" class="button">Bewertungen auf Booking.com ansehen</a>
+  <p>Hier sehen Sie die aktuellen Bewertungen auf Booking.com:</p>
+  <iframe src="https://www.booking.com/Share-17ZxGy0" width="100%" height="600" style="border:0;" loading="lazy"></iframe>
 </div>
 
 <div id="faq" class="tabcontent">
