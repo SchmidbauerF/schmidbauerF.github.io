@@ -7,6 +7,7 @@
 <meta name="description" content="Gemütliche Souterrain Ferienwohnung in Iphofen – ideal für Pendler, Geschäftsreisende und Touristen. Komfortabel, ruhig gelegen und nur 40€ pro Nacht.">
 
 <style>
+/* Allgemein */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -18,7 +19,7 @@ body {
 
 header {
   position: relative;
-  background-image: url('Iphofen.jpg'); /* dein Bild hier */
+  background-image: url('header.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -33,7 +34,7 @@ header::before {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.4); /* Overlay für bessere Lesbarkeit */
+  background-color: rgba(0,0,0,0.4);
   z-index: 1;
 }
 
@@ -43,7 +44,34 @@ header h1, header p {
   margin: 0;
 }
 
-section {
+/* Tabs */
+.tab {
+  overflow: hidden;
+  background-color: #2f4f4f;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  transition: 0.3s;
+  color: white;
+  font-size: 16px;
+}
+
+.tab button:hover {
+  background-color: #1f3535;
+}
+
+.tab button.active {
+  background-color: #b22222;
+}
+
+.tabcontent {
+  display: none;
   padding: 40px 20px;
   max-width: 900px;
   margin: auto;
@@ -52,16 +80,7 @@ section {
   border-radius: 8px;
 }
 
-h1, h2 {
-  color: #2f4f4f;
-}
-
-.price {
-  font-size: 1.8em;
-  color: #b22222;
-  font-weight: bold;
-}
-
+/* Preis Button */
 .button {
   display: inline-block;
   padding: 12px 20px;
@@ -76,6 +95,7 @@ h1, h2 {
   background: #1f3535;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -84,6 +104,7 @@ footer {
   font-size: 0.9em;
 }
 
+/* Listen für Ausstattung */
 ul {
   columns: 2;
 }
@@ -92,9 +113,30 @@ ul {
     columns: 1;
   }
 }
+
+/* Kontaktformular */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #2f4f4f;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #1f3535;
+}
 </style>
 </head>
-
 <body>
 
 <header>
@@ -102,82 +144,128 @@ ul {
   <p>Gemütlich • Ruhig • Persönlich</p>
 </header>
 
-<section>
-  <h2>Herzlich Willkommen in Iphofen</h2>
-  <p>
-  Schön, dass Sie zu uns gefunden haben. Unsere liebevoll eingerichtete Souterrain-Ferienwohnung 
-  in Iphofen ist ein Ort zum Ankommen und Wohlfühlen. 
-  Ob als Pendler, Geschäftsreisender oder Tourist – hier genießen Sie Ruhe, 
-  Komfort und eine persönliche Atmosphäre.
-  </p>
-  <p>
-  Iphofen, eine charmante fränkische Weinstadt, begeistert mit historischer Altstadt, 
-  Weinbergen und einer hervorragenden Anbindung an Würzburg (ca. 30 km). 
-  Die Region bietet zahlreiche Rad- und Wanderwege, ausgezeichnete Gastronomie 
-  und kulturelle Highlights wie die Würzburger Residenz oder die Alte Mainbrücke.
-  </p>
-</section>
+<!-- Tab-Buttons -->
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event,'wohnung')">Über die Wohnung</button>
+  <button class="tablinks" onclick="openTab(event,'preise')">Preise & Buchung</button>
+  <button class="tablinks" onclick="openTab(event,'iphofen')">Iphofen & Umgebung</button>
+  <button class="tablinks" onclick="openTab(event,'gastgeber')">Gastgeber</button>
+  <button class="tablinks" onclick="openTab(event,'galerie')">Galerie</button>
+  <button class="tablinks" onclick="openTab(event,'kontakt')">Kontakt</button>
+  <button class="tablinks" onclick="openTab(event,'bewertungen')">Bewertungen</button>
+  <button class="tablinks" onclick="openTab(event,'faq')">FAQ</button>
+</div>
 
-<section>
-  <h2>Die Wohnung</h2>
-  <p>
-  Die Ferienwohnung verfügt über 1 Schlafzimmer, 1 Badezimmer mit Dusche 
-  und eine voll ausgestattete Küche. Zwei Schlafmöglichkeiten bieten Komfort 
-  für Einzelreisende oder Paare.
-  </p>
-
+<!-- Tab Inhalte -->
+<div id="wohnung" class="tabcontent" style="display:block;">
+  <h2>Über die Wohnung</h2>
+  <p>Ganze Ferienwohnung, 40 m², eigene Küche & eigenes Badezimmer.</p>
+  <p>Bequeme Betten (1 Schlafsofa + 1 Doppelbett), Flachbild-TV, Kaffeemaschine, kostenfreies WLAN. Bewertung: 8,7/10 (11 Bewertungen).</p>
   <h3>Ausstattung</h3>
   <ul>
-    <li>WLAN kostenlos</li>
-    <li>Flachbild-TV</li>
     <li>Waschmaschine</li>
-    <li>Voll ausgestattete Küche</li>
-    <li>Kaffeemaschine & Wasserkocher</li>
-    <li>Mikrowelle & Backofen</li>
-    <li>Kochfeld & Toaster</li>
-    <li>Esstisch & Sitzbereich</li>
+    <li>Reinigungsmittel</li>
+    <li>Kühlschrank</li>
+    <li>Kaffeemaschine</li>
+    <li>Mikrowelle</li>
+    <li>Küchenutensilien</li>
+    <li>Wasserkocher</li>
+    <li>Backofen & Herdplatte</li>
+    <li>Toaster</li>
+    <li>Esstisch</li>
     <li>Kostenlose Pflegeprodukte</li>
-    <li>Handtücher & Bettwäsche inklusive</li>
+    <li>Dusche & WC</li>
+    <li>Handtücher & Bettwäsche</li>
+    <li>Sofa & Sitzbereich</li>
+    <li>TV</li>
     <li>Heizung</li>
-    <li>Rauchfreie Unterkunft</li>
+    <li>Schrank & Wecker</li>
+    <li>Schlafsofa</li>
+    <li>Handdesinfektionsmittel</li>
+    <li>Rauchfrei</li>
   </ul>
-</section>
+</div>
 
-<section>
-  <h2>Ideal für</h2>
-  <p>
-  ✓ Pendler und Monteure<br>
-  ✓ Geschäftsreisende<br>
-  ✓ Urlauber und Weinliebhaber<br>
-  ✓ Wochenendgäste<br>
-  ✓ Alleinreisende (Lagebewertung 9,1)
-  </p>
-</section>
+<div id="preise" class="tabcontent">
+  <h2>Preise & Buchung</h2>
+  <p>Preis: 40 € pro Nacht</p>
+  <p>Ein Kalender (z.B. Google Calendar Integration möglich)</p>
+  <a href="mailto:schmidbauer.f91@gmail.com?subject=Buchungsanfrage%20Souterrain%20Ferienwohnung%20Iphofen" class="button">Jetzt anfragen</a>
+  <h3>Zahlungsinformationen</h3>
+  <p>Zahlung im Voraus per PayPal oder Überweisung. Details werden nach Anfrage mitgeteilt.</p>
+</div>
 
-<section>
-  <h2>Preis</h2>
-  <p class="price">40 € pro Nacht</p>
-  <p>
-  Transparent, fair und unkompliziert.
-  </p>
+<div id="iphofen" class="tabcontent">
+  <h2>Iphofen & Umgebung</h2>
+  <p>Iphofen, malerische fränkische Weinstadt, liegt ruhig inmitten von Weinbergen und historischem Stadtkern.</p>
+  <p>Sehenswürdigkeiten & Aktivitäten:</p>
+  <ul>
+    <li>Historische Altstadt mit mittelalterlicher Stadtmauer</li>
+    <li>Weinregion Franken – Weinverkostung direkt vor Ort</li>
+    <li>Rad- & Wanderwege rund um die Weinberge</li>
+    <li>Würzburg 30 km entfernt – Residenz, Hofgarten, Alte Mainbrücke</li>
+    <li>Restaurants & Cafés mit fränkischer Küche</li>
+    <li>Kulturelle Veranstaltungen & Wochenmärkte</li>
+  </ul>
+</div>
 
-  <a href="HIER_DEIN_BUCHUNGSLINK" class="button">Jetzt anfragen</a>
-</section>
+<div id="gastgeber" class="tabcontent">
+  <h2>Gastgeber</h2>
+  <p>Gabriele & Meinhard Schmidbauer – herzliche, freundliche Gastgeber aus Leidenschaft. Mit viel Liebe zum Detail sorgen wir dafür, dass Sie sich willkommen fühlen.</p>
+  <p>Persönlicher Kontakt, Sauberkeit und ein angenehmes Ambiente sind uns besonders wichtig. Wir geben Tipps zur Umgebung, Restaurants und Sehenswürdigkeiten, damit Sie einen rundum schönen Aufenthalt genießen.</p>
+</div>
 
-<section>
-  <h2>Ihre Gastgeber</h2>
-  <p>
-  Die Ferienwohnung wird von der herzlichen Familie Schmidbauer 
-  (Meinhard & Gabi) betrieben. Mit viel Liebe zum Detail 
-  sorgen wir dafür, dass Sie sich bei uns willkommen fühlen. 
-  Persönlicher Kontakt, Sauberkeit und ein angenehmes Ambiente 
-  stehen für uns an erster Stelle.
-  </p>
-</section>
+<div id="galerie" class="tabcontent">
+  <h2>Galerie</h2>
+  <p>Hier werden in Kürze Bilder der Ferienwohnung und der Umgebung angezeigt.</p>
+</div>
+
+<div id="kontakt" class="tabcontent">
+  <h2>Kontakt</h2>
+  <p>Adresse: Am Schafhofgraben 4a, 97346 Iphofen</p>
+  <p>Telefon: 09323 1615</p>
+  <h3>Nachricht senden:</h3>
+  <form action="mailto:schmidbauer.f91@gmail.com" method="post" enctype="text/plain">
+    <label>Name:</label>
+    <input type="text" name="name" required>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <label>Nachricht:</label>
+    <textarea name="message" rows="6" required></textarea>
+    <input type="submit" value="Senden">
+  </form>
+</div>
+
+<div id="bewertungen" class="tabcontent">
+  <h2>Bewertungen</h2>
+  <p>Hier können die Bewertungen von Booking.com eingebunden werden:</p>
+  <a href="https://www.booking.com/hotel/de/souterrain-ferienwohnung-iphofen-iphofen.de.html?aid=202008&label=mkt123sc-cacc9c71-7bc9-4727-9ab5-5ae02aada87f&sid=5b22d8819cdc383965ec1fc96eec5c03&dest_id=-1800892&dest_type=city&dist=0&group_adults=1&group_children=0&hapos=9&hpos=9&nflt=ht_id%3D201&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=price_from_high_to_low&srepoch=1772570371&srpvid=24a191259ec001f2&type=total&ucfs=1" target="_blank" class="button">Bewertungen auf Booking.com ansehen</a>
+</div>
+
+<div id="faq" class="tabcontent">
+  <h2>FAQ</h2>
+  <p>Hier werden häufige Fragen und Antworten eingefügt. Inhalt folgt.</p>
+</div>
 
 <footer>
   © 2025 Souterrain Ferienwohnung Iphofen | Familie Schmidbauer
 </footer>
+
+<script>
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for(i=0;i<tabcontent.length;i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for(i=0;i<tablinks.length;i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active","");
+  }
+  document.getElementById(tabName).style.display="block";
+  evt.currentTarget.className += " active";
+}
+</script>
 
 </body>
 </html>
